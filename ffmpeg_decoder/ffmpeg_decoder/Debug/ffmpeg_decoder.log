@@ -1,0 +1,5 @@
+﻿  ffmpeg_decoder.cpp
+c:\users\jimmy\documents\github\ffmpeg_decoder_video\ffmpeg_decoder\ffmpeg_decoder\imageprocessing\dipdefine\dipdefine.h : warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+c:\users\jimmy\documents\github\ffmpeg_decoder_video\ffmpeg_decoder\ffmpeg_decoder\ffmpeg_decoder.cpp(148): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1772): note: 請參閱 'sprintf' 的宣告
+  ffmpeg_decoder.vcxproj -> C:\Users\Jimmy\Documents\GitHub\ffmpeg_decoder_video\ffmpeg_decoder\Debug\ffmpeg_decoder.exe
