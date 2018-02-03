@@ -999,7 +999,7 @@ BMPIMAGE BmpFileRead(const char *filename, const bool FilenameExtension)
 //	BmpFileRead副程式
 {																		//	進入BmpFileRead副程式
 	BMPIMAGE OutputData;												//	宣告輸出資料空間
-	stpcpy(OutputData.FILENAME, "");									//	初始化OutputData
+	strcpy(OutputData.FILENAME, "");									//	初始化OutputData
 	OutputData.XSIZE = 0;												//	初始化OutputData
 	OutputData.YSIZE = 0;												//	初始化OutputData
 	OutputData.IMAGE_DATA = NULL;										//	初始化OutputData
@@ -1031,7 +1031,7 @@ BMPIMAGE BmpFileRead(const char *filename, const bool FilenameExtension)
 		return OutputData;												//	回傳OutputData，並結束副程式
 	}																	//	結束if敘述
 	//***填入圖檔資訊至OutputData***
-	stpcpy(OutputData.FILENAME, fname_bmp);								//	填入檔案路徑(含副檔名)
+	strcpy(OutputData.FILENAME, fname_bmp);								//	填入檔案路徑(含副檔名)
 	OutputData.XSIZE = (unsigned int)BmpReadXSize(OutputData.FILENAME,true);
 	//	讀取輸入BMP圖檔寬度(路徑已包含副檔名) 
 	OutputData.YSIZE = (unsigned int)BmpReadYSize(OutputData.FILENAME,true);
