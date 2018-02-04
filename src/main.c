@@ -845,7 +845,7 @@ int main(int argc, char** argv)											//	主程式
 	printf("%s\n",BMPImage1.FILENAME);									//	顯示讀取圖檔之檔名
 	
 	if(BMPImage1.IMAGE_DATA == NULL)									//	若讀取BMP圖檔發生錯誤
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("圖檔物件錯誤!");										//	顯示"圖檔物件錯誤!" 
 		return -1;														//	傳回-1，並結束程式 
 	}																	//	結束if敘述
@@ -858,7 +858,7 @@ int main(int argc, char** argv)											//	主程式
 	RGBImage1.IMAGE_DATA = (BMP24RGB*)malloc(RGBImage1.XSIZE * RGBImage1.YSIZE * sizeof(BMP24RGB));
 	//	配置AnalysisData(二維)指標記憶體大小
 	if (RGBImage1.IMAGE_DATA == NULL) 									//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return -1;														//	傳回-1，並結束程式 
 	}																	//	結束if敘述 
@@ -877,14 +877,14 @@ unsigned long BmpReadFilesize(const char *filename, const bool FilenameExtension
 {																		//	進入BMP圖檔大小(Byte)讀取副程式
 	//***檢查副程式傳入檔名***
 	if(filename == NULL)												//	若輸入filename為NULL
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("檔案路徑輸入為NULL\n");									//	顯示"檔案路徑輸入為NULL"並換行
 		return 0;														//	回傳數值0，並結束副程式
 	}																	//	結束if敘述
 	//***參考FilenameExtension變數控制檔名處理方式***
 	char fname_bmp[MAX_PATH];											//	宣告檔案名稱fname_bmp陣列變數(最多MAX_PATH個字元) 
 	if(FilenameExtension == false)										//	若輸入參數fname_bmp不具副檔名
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		sprintf(fname_bmp, "%s.bmp", filename);							//	產生完整檔案路徑並存放至fname_bmp陣列
 	}																	//	結束if敘述
 	else																//	若輸入參數fname_bmp已包含副檔名
@@ -895,7 +895,7 @@ unsigned long BmpReadFilesize(const char *filename, const bool FilenameExtension
 	FILE *fp;															//	宣告檔案指標fp區域變數
 	fp = fopen(fname_bmp, "rb");										//	以rb(二進位讀取)模式開啟檔案
 	if (fp==NULL)														//	若開啟檔案失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("讀取檔案失敗！\n");										//	顯示錯誤訊息 
 		return -1;														//	傳回-1，並結束副程式 
 	}																	//	結束if敘述	 
@@ -913,7 +913,7 @@ unsigned long BmpReadXSize(const char *filename, const bool FilenameExtension)
 {																		//	進入BMP圖檔xsize(寬度)讀取副程式
 	char fname_bmp[MAX_PATH];											//	宣告檔案名稱fname_bmp陣列變數(最多MAX_PATH個字元) 
 	if(FilenameExtension == false)										//	若輸入參數fname_bmp不具副檔名
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		sprintf(fname_bmp, "%s.bmp", filename);							//	產生完整檔案路徑並存放至fname_bmp陣列
 	}																	//	結束if敘述
 	else																//	若輸入參數fname_bmp已包含副檔名
@@ -924,7 +924,7 @@ unsigned long BmpReadXSize(const char *filename, const bool FilenameExtension)
 	FILE *fp;															//	宣告檔案指標fp區域變數
 	fp = fopen(fname_bmp, "rb");										//	以rb(二進位讀取)模式開啟檔案
 	if (fp==NULL)														//	若開啟檔案失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("讀取檔案失敗！\n");										//	顯示錯誤訊息 
 		return -1;														//	傳回-1，並結束副程式 
 	}																	//	結束if敘述	 
@@ -943,7 +943,7 @@ unsigned long BmpReadYSize(const char *filename, const bool FilenameExtension)
 {																		//	進入BMP圖檔ysize(高度)讀取副程式
 	char fname_bmp[MAX_PATH];											//	宣告檔案名稱fname_bmp陣列變數(最多MAX_PATH個字元) 
 	if(FilenameExtension == false)										//	若輸入參數fname_bmp不具副檔名
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		sprintf(fname_bmp, "%s.bmp", filename);							//	產生完整檔案路徑並存放至fname_bmp陣列
 	}																	//	結束if敘述
 	else																//	若輸入參數fname_bmp已包含副檔名
@@ -954,7 +954,7 @@ unsigned long BmpReadYSize(const char *filename, const bool FilenameExtension)
 	FILE *fp;															//	宣告檔案指標fp區域變數
 	fp = fopen(fname_bmp, "rb");										//	以rb(二進位讀取)模式開啟檔案
 	if (fp==NULL)														//	若開啟檔案失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("讀取檔案失敗！\n");										//	顯示錯誤訊息 
 		return -1;														//	傳回-1，並結束副程式 
 	}																	//	結束if敘述	 
@@ -971,7 +971,7 @@ char BmpRead(unsigned char *image,const int xsize,const int ysize, const char *f
 {																		//	進入BMP圖檔讀取副程式
 	char fname_bmp[MAX_PATH];											//	宣告檔案名稱fname_bmp陣列變數(最多MAX_PATH個字元) 
 	if(FilenameExtension == false)										//	若輸入參數fname_bmp不具副檔名
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		sprintf(fname_bmp, "%s.bmp", filename);							//	產生完整檔案路徑並存放至fname_bmp陣列
 	}																	//	結束if敘述
 	else																//	若輸入參數fname_bmp已包含副檔名
@@ -984,7 +984,7 @@ char BmpRead(unsigned char *image,const int xsize,const int ysize, const char *f
 	FILE *fp;															//	宣告檔案指標fp區域變數
 	fp = fopen(fname_bmp, "rb");										//	以rb(二進位讀取)模式開啟檔案
 	if (fp==NULL)														//	若開啟檔案失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("讀取檔案失敗！\n");										//	顯示錯誤訊息 
 		return -1;														//	傳回-1，並結束副程式 
 	}																	//	結束if敘述	 
@@ -1005,14 +1005,14 @@ BMPIMAGE BmpFileRead(const char *filename, const bool FilenameExtension)
 	OutputData.IMAGE_DATA = NULL;										//	初始化OutputData
 	//***檢查副程式傳入檔名***
 	if(filename == NULL)												//	若輸入filename為NULL
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("檔案路徑輸入為NULL\n");									//	顯示"檔案路徑輸入為NULL"並換行
 		return OutputData;												//	回傳OutputData，並結束副程式
 	}																	//	結束if敘述
 	//***副檔名填補***
 	char fname_bmp[MAX_PATH];											//	宣告檔案名稱fname_bmp陣列變數(最多MAX_PATH個字元) 
 	if(FilenameExtension == false)										//	若輸入參數fname_bmp不具副檔名
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		sprintf(fname_bmp, "%s.bmp", filename);							//	產生完整檔案路徑並存放至fname_bmp陣列
 	}																	//	結束if敘述
 	else																//	若輸入參數fname_bmp已包含副檔名
@@ -1021,12 +1021,12 @@ BMPIMAGE BmpFileRead(const char *filename, const bool FilenameExtension)
 	}																	//	結束else敘述
 	//***確認檔案存在及可讀性***
 	if (FileExistCheck(fname_bmp) == false)								//	若檔案不存在 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("檔案%s不存在！\n",fname_bmp);							//	顯示錯誤訊息 
 		return OutputData;												//	回傳OutputData，並結束副程式
 	}																	//	結束if敘述	 
 	if (FileReadPermissionCheck(fname_bmp) == false)					//	若檔案不可讀取
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("讀取檔案錯誤！\n");										//	顯示錯誤訊息
 		return OutputData;												//	回傳OutputData，並結束副程式
 	}																	//	結束if敘述
@@ -1037,7 +1037,7 @@ BMPIMAGE BmpFileRead(const char *filename, const bool FilenameExtension)
 	OutputData.YSIZE = (unsigned int)BmpReadYSize(OutputData.FILENAME,true);
 	//	讀取輸入BMP圖檔高度(路徑已包含副檔名) 
 	if( (OutputData.XSIZE == -1) || (OutputData.YSIZE == -1) )			//	若XSIZE或YSIZE為-1(代表讀取檔案失敗)	
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("讀取圖檔大小資訊失敗!");								//	顯示"讀取圖檔大小資訊失敗!"
 		return OutputData;												//	回傳OutputData，並結束副程式
 	}																	//	結束if敘述
@@ -1051,7 +1051,7 @@ BMPIMAGE BmpFileRead(const char *filename, const bool FilenameExtension)
 		OutputData.IMAGE_DATA = (unsigned char*)malloc((OutputData.XSIZE * 3 + OutputData.FILLINGBYTE) * OutputData.YSIZE * sizeof(unsigned char));
 		//	計算並建立影像大小空間 
 		if (OutputData.IMAGE_DATA == NULL) 								//	若建立影像空間失敗 
-		{																//	進入if敘述 
+		{																//	if statement start, 進入if敘述 
 			printf("記憶體分配錯誤!");									//	顯示"記憶體分配錯誤!" 
 			return OutputData;											//	回傳OutputData，並結束副程式
 		}																//	結束if敘述 
@@ -1108,7 +1108,7 @@ int BmpWriteV1(const unsigned char *image,const int xsize,const int ysize,const 
 	sprintf(fname_bmp, "%s.bmp", filename);								//	產生圖檔完整檔名路徑
 	FILE *fp;															//	宣告檔案指標fp區域變數，用以記錄寫入圖檔路徑 
 	if (!(fp = fopen(fname_bmp, "wb"))) 								//	嘗試以二進位讀檔方式開啟圖檔，若無法成功開啟
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		return -1;														//	回傳-1，並結束副程式
 	}																	//	結束if敘述
 	
@@ -1127,7 +1127,7 @@ void ViewBMPImage(const char *filename)									//	ViewBMPImage副程式
 {																		//	進入ViewBMPImage副程式
 	#ifdef _WIN32														//	若編譯環境為Windows系統
 		if(filename==NULL)												//	若傳入之filename指標為NULL
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			return;														//	結束副程式
 		}																//	結束if敘述
 		char fname_bmp[MAX_PATH];										//	宣告檔案名稱fname_bmp陣列變數(最多MAX_PATH個字元) 
@@ -1141,7 +1141,7 @@ void ViewBMPImage(const char *filename)									//	ViewBMPImage副程式
 	#endif																//	結束ifdef敘述
 	#ifdef linux														//	若編譯環境為Linux系統
 		if(filename==NULL)												//	若傳入之filename指標為NULL
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			return;														//	結束副程式
 		}																//	結束if敘述
 		char fname_bmp[MAX_PATH];										//	宣告檔案名稱fname_bmp陣列變數(最多MAX_PATH個字元) 
@@ -1161,7 +1161,7 @@ BMP24RGB *InitialIMGArray(const int xsize, const int ysize)				//	InitialIMGArra
 	BMP24RGB *OutputData;												//	宣告OutputData為BMP24RGB指標型態變數
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData(二維)指標記憶體大小
 	if(OutputData == NULL)												//	若Output為空指標
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤"
 		return NULL;													//	回傳NULL，並結束副程式
 	}																	//	結束if敘述
@@ -1183,7 +1183,7 @@ BMP24RGB *RAWImageToArray(const unsigned char *image, const int xsize, const int
 	BMP24RGB *OutputData;												//	宣告OutputData為BMP24RGB指標型態變數
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData(二維)指標記憶體大小
 	if(OutputData == NULL)												//	若Output為空指標
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤"
 		return NULL;													//	回傳NULL，並結束副程式
 	}																	//	結束if敘述
@@ -1214,7 +1214,7 @@ unsigned char *ArrayToRAWImage(const BMP24RGB* InputData,const int xsize,const i
 	OutputData = (unsigned char*)malloc((xsize * 3 + FillingByte) * ysize * sizeof(unsigned char));
 	//	配置OutputData指標記憶體大小
 	if(OutputData == NULL)												//	若Output為空指標
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤"
 		return NULL;													//	回傳NULL，並結束副程式
 	}																	//	結束if敘述
@@ -1250,7 +1250,7 @@ HSV *BMP24RGBToHSV(const BMP24RGB *InputData,const int xsize,const int ysize)
 	HSV *OutputData;													//	宣告OutputData為HSV指標型態變數
 	OutputData = (HSV*)malloc(xsize * ysize * sizeof(HSV));				//	配置OutputData指標記憶體大小
 	if(OutputData == NULL)												//	若Output為空指標
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤"
 		return NULL;													//	回傳NULL，並結束副程式
 	}																	//	結束if敘述
@@ -1292,7 +1292,7 @@ HSV *BMP24RGBToHSV(const BMP24RGB *InputData,const int xsize,const int ysize)
 							 sqrt(((pow((Red - Green), 2.0)) + 
 							 (Red - Blue) * (Green - Blue)))) * (180.0 / M_PI);
 			if( Max == Min )											//	若Max=Min
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				OutputData[LoopNumber1 * xsize + LoopNumber2].H = 0.0;	//	設定H=0
 			}															//	結束if敘述
 			else if(Blue <= Green)										//	若Blue(藍色成分)小於等於Green(綠色成分)
@@ -1305,7 +1305,7 @@ HSV *BMP24RGBToHSV(const BMP24RGB *InputData,const int xsize,const int ysize)
 			}															//	結束else敘述
 			//***計算S***
 			if(Max == 0)												//	若Max=0
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				OutputData[LoopNumber1 * xsize + LoopNumber2].S = 0.0;	//	填入S數值
 			}															//	結束if敘述
 			else														//	若Max不為0
@@ -1339,7 +1339,7 @@ BMP24RGB *HSVToBMP24RGB(const HSV *InputData,const int xsize,const int ysize)
 	BMP24RGB *OutputData;												//	宣告OutputData為HSV指標型態變數
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if(OutputData == NULL)												//	若Output為空指標
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤"
 		return NULL;													//	回傳NULL，並結束副程式
 	}																	//	結束if敘述
@@ -1369,7 +1369,7 @@ BMP24RGB *HSVToBMP24RGB(const HSV *InputData,const int xsize,const int ysize)
 			q = Max * (1.0 - f * S);
 			t = Max * (1.0 - (1.0 - f) * S);
 			if(hi == 0)													//	若hi=0
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				OutputData[LoopNumber1 * xsize + LoopNumber2].R = Max;	//	填入R資料
 				OutputData[LoopNumber1 * xsize + LoopNumber2].G = t;	//	填入G資料
 				OutputData[LoopNumber1 * xsize + LoopNumber2].B = Min;	//	填入B資料
@@ -1414,7 +1414,7 @@ bool ImageDataToTxt(const char *file_name,const BMP24RGB *image,const int xsize,
 	char fname_txt[MAX_PATH];											//	宣告圖片資料記錄檔之完整檔名(最多MAX_PATH個字元)
 	sprintf(fname_txt, "%s.txt", file_name);							//	建立圖片資料記錄檔之完整檔名(最多MAX_PATH個字元)
 	if(FileWrite(fname_txt,"","w") == False)							//	嘗試建立檔案，若檔案建立失敗
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		return False;													//	回傳False並結束副程式返回
 	}																	//	結束if敘述
 	long long int loop_num;												//	宣告loop_num區域變數供迴圈使用
@@ -1424,19 +1424,19 @@ bool ImageDataToTxt(const char *file_name,const BMP24RGB *image,const int xsize,
 		sprintf(WriteStringTemp,"第%d個像素R=%d\t",loop_num,image[loop_num].R);
 		//	生成寫入字串資料
 		if(FileWrite(fname_txt,WriteStringTemp,"a")==False)				//	嘗試寫入資料
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			return False;												//	回傳False並結束副程式返回
 		}																//	結束if敘述
 		sprintf(WriteStringTemp,"第%d個像素G=%d\t",loop_num,image[loop_num].G);
 		//	生成寫入字串資料
 		if(FileWrite(fname_txt,WriteStringTemp,"a")==False)				//	嘗試寫入資料
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			return False;												//	回傳False並結束副程式返回
 		}																//	結束if敘述
 		sprintf(WriteStringTemp,"第%d個像素B=%d\n",loop_num,image[loop_num].B);
 		//	生成寫入字串資料
 		if(FileWrite(fname_txt,WriteStringTemp,"a")==False)				//	嘗試寫入資料
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			return False;												//	回傳False並結束副程式返回
 		}																//	結束if敘述
 	}																	//	結束for迴圈
@@ -1448,7 +1448,7 @@ bool HSVDataToTxt(const char *file_name,const HSV *image,const int xsize,const i
 	char fname_txt[MAX_PATH];											//	宣告圖片資料記錄檔之完整檔名(最多MAX_PATH個字元)
 	sprintf(fname_txt, "%s.txt", file_name);							//	建立圖片資料記錄檔之完整檔名(最多MAX_PATH個字元)
 	if(FileWrite(fname_txt,"","w") == False)							//	嘗試建立檔案，若檔案建立失敗
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		return False;													//	回傳False並結束副程式返回
 	}																	//	結束if敘述
 	long long int loop_num;												//	宣告loop_num區域變數供迴圈使用
@@ -1458,19 +1458,19 @@ bool HSVDataToTxt(const char *file_name,const HSV *image,const int xsize,const i
 		sprintf(WriteStringTemp,"第%d個像素H=%f\t",loop_num,(float)image[loop_num].H);
 		//	生成寫入字串資料
 		if(FileWrite(fname_txt,WriteStringTemp,"a")==False)				//	嘗試寫入資料
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			return False;												//	回傳False並結束副程式返回
 		}																//	結束if敘述
 		sprintf(WriteStringTemp,"第%d個像素S=%f\t",loop_num,(float)image[loop_num].S);
 		//	生成寫入字串資料
 		if(FileWrite(fname_txt,WriteStringTemp,"a")==False)				//	嘗試寫入資料
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			return False;												//	回傳False並結束副程式返回
 		}																//	結束if敘述
 		sprintf(WriteStringTemp,"第%d個像素V=%f\n",loop_num,(float)image[loop_num].V);
 		//	生成寫入字串資料
 		if(FileWrite(fname_txt,WriteStringTemp,"a")==False)				//	嘗試寫入資料
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			return False;												//	回傳False並結束副程式返回
 		}																//	結束if敘述
 	}																	//	結束for迴圈
@@ -1482,7 +1482,7 @@ BMP24RGB *ImgDifference2(const BMP24RGB *InputData1,const BMP24RGB *InputData2,c
 	BMP24RGB *OutputData;												//	宣告OutputData為BMP24RGB指標型態變數
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(HSV));		//	配置OutputData指標記憶體大小
 	if(OutputData == NULL)												//	若Output為空指標
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤"
 		return NULL;													//	回傳NULL，並結束副程式
 	}																	//	結束if敘述
@@ -1525,7 +1525,7 @@ BMP24RGB *BMP24RGB2or(const BMP24RGB *InputData1,const BMP24RGB *InputData2,cons
 	BMP24RGB *OutputData;												//	宣告OutputData為BMP24RGB指標型態變數
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(HSV));		//	配置OutputData指標記憶體大小
 	if(OutputData == NULL)												//	若Output為空指標
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤"
 		return NULL;													//	回傳NULL，並結束副程式
 	}																	//	結束if敘述
@@ -1569,7 +1569,7 @@ BMP24RGB *BmpToGraylevel(const BMP24RGB *image,const int xsize,const int ysize)
 	GraylevelImage = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));
 	//	配置GraylevelImage指標記憶體大小
 	if (GraylevelImage == NULL) 										//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -1591,7 +1591,7 @@ BMP24RGB *BmpConvolution33(const BMP24RGB *image,const int xsize,const int ysize
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -1610,7 +1610,7 @@ BMP24RGB *BmpConvolution33(const BMP24RGB *image,const int xsize,const int ysize
 		//	( (loop_num % xsize) == 0)			------->	|				|	<-------	( ((loop_num + 1) % xsize) == 0)
 		//													|				|
 		//	(loop_num < xsize)					------->	|-－－－－－－－|
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			OutputData[loop_num].R = image[loop_num].R;					//	邊界點不處理
 			OutputData[loop_num].G = image[loop_num].G;					//	邊界點不處理
 			OutputData[loop_num].B = image[loop_num].B;					//	邊界點不處理
@@ -1642,7 +1642,7 @@ BMP24RGB *BmpConvolution55(const BMP24RGB *image,const int xsize,const int ysize
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -1661,7 +1661,7 @@ BMP24RGB *BmpConvolution55(const BMP24RGB *image,const int xsize,const int ysize
 			( ((loop_num + 2) % xsize) == 0) ||
 			(loop_num >= (xsize*(ysize-2))) )
 		//	檢測邊界點像素
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			OutputData[loop_num].R = image[loop_num].R;					//	邊界點不處理
 			OutputData[loop_num].G = image[loop_num].G;					//	邊界點不處理
 			OutputData[loop_num].B = image[loop_num].B;					//	邊界點不處理
@@ -1700,7 +1700,7 @@ BMP24RGB *BmpConvolution77(const BMP24RGB *image,const int xsize,const int ysize
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -1720,7 +1720,7 @@ BMP24RGB *BmpConvolution77(const BMP24RGB *image,const int xsize,const int ysize
 		if( (PixelLocationX < floor(MaskSize/2)) || (PixelLocationX > (xsize - floor(MaskSize/2))) ||
 			(PixelLocationY < floor(MaskSize/2)) || (PixelLocationY > (ysize - floor(MaskSize/2))) )
 		//	檢測邊界點像素
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			OutputData[loop_num1].R = image[loop_num1].R;				//	邊界點不處理
 			OutputData[loop_num1].G = image[loop_num1].G;				//	邊界點不處理
 			OutputData[loop_num1].B = image[loop_num1].B;				//	邊界點不處理
@@ -1760,7 +1760,7 @@ BMP24RGB *BmpConvolution(int MaskSize, const BMP24RGB *image,const int xsize,con
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -1780,7 +1780,7 @@ BMP24RGB *BmpConvolution(int MaskSize, const BMP24RGB *image,const int xsize,con
 		if( (PixelLocationX < floor(MaskSize/2)) || (PixelLocationX > (xsize - floor(MaskSize/2))) ||
 			(PixelLocationY < floor(MaskSize/2)) || (PixelLocationY > (ysize - floor(MaskSize/2))) )
 		//	檢測邊界點像素
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			OutputData[loop_num1].R = image[loop_num1].R;				//	邊界點不處理
 			OutputData[loop_num1].G = image[loop_num1].G;				//	邊界點不處理
 			OutputData[loop_num1].B = image[loop_num1].B;				//	邊界點不處理
@@ -1821,7 +1821,7 @@ BMP24RGB *ImageSmoothing33V1(const BMP24RGB *image,const int xsize,const int ysi
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -1830,7 +1830,7 @@ BMP24RGB *ImageSmoothing33V1(const BMP24RGB *image,const int xsize,const int ysi
 	{																	//	進入for迴圈
 		if( (loop_num < xsize) || ( (loop_num % xsize) == 0) || ( ((loop_num + 1) % xsize) == 0) || (loop_num >= (xsize*(ysize-1))))
 		//	檢測邊界點像素
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			OutputData[loop_num].R = image[loop_num].R;					//	邊界點不處理
 			OutputData[loop_num].G = image[loop_num].G;					//	邊界點不處理
 			OutputData[loop_num].B = image[loop_num].B;					//	邊界點不處理
@@ -1910,7 +1910,7 @@ BMP24RGB *MedianFilter33(const BMP24RGB *image,const int xsize,const int ysize)
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -1919,7 +1919,7 @@ BMP24RGB *MedianFilter33(const BMP24RGB *image,const int xsize,const int ysize)
 	{																	//	進入for迴圈
 		if( (loop_num < xsize) || ( (loop_num % xsize) == 0) || ( ((loop_num + 1) % xsize) == 0) || (loop_num >= (xsize*(ysize-1))))
 		//	檢測邊界點像素
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			OutputData[loop_num].R = image[loop_num].R;					//	邊界點不處理
 			OutputData[loop_num].G = image[loop_num].G;					//	邊界點不處理
 			OutputData[loop_num].B = image[loop_num].B;					//	邊界點不處理
@@ -1981,7 +1981,7 @@ BMP24RGB *GaussianBlur33V1(const BMP24RGB *image,const int xsize,const int ysize
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -1998,7 +1998,7 @@ BMP24RGB *GaussianBlur33V1(const BMP24RGB *image,const int xsize,const int ysize
 	{																	//	進入for迴圈
 		if( (loop_num < xsize) || ( (loop_num % xsize) == 0) || ( ((loop_num + 1) % xsize) == 0) || (loop_num >= (xsize*(ysize-1))))
 		//	檢測邊界點像素
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			OutputData[loop_num].R = image[loop_num].R;					//	邊界點不處理
 			OutputData[loop_num].G = image[loop_num].G;					//	邊界點不處理
 			OutputData[loop_num].B = image[loop_num].B;					//	邊界點不處理
@@ -2063,7 +2063,7 @@ BMP24RGB *GaussianFigure2D(const int xsize,const int ysize,const long double Sta
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -2099,7 +2099,7 @@ BMP24RGB *ImageOCR(const BMP24RGB *image,const int xsize,const int ysize)
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述
@@ -2132,14 +2132,14 @@ BMP24RGB *ImageOCR(const BMP24RGB *image,const int xsize,const int ysize)
 		PixelLocationY = floor(loop_num / xsize);						//	計算PixelLocationY
 		if( (PixelLocationX < 150) || (PixelLocationX > (xsize - 150)) || (PixelLocationY < 150) || (PixelLocationY > (ysize - 150)))
 		//	檢測邊界點像素(像素點與邊界最短距離若小於150)
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			
 		}																//	結束if敘述
 		else															//	若非邊界點像素
 		{																//	進入else敘述
 			if( (image[loop_num].R == 0) || (image[loop_num].G == 0) || (image[loop_num].B == 0) )
 			//	若R、G、B像素值任一為0(可能為文字)
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				YArray[PixelLocationY] = true;							//	將布林變數改為true
 			}															//	結束if敘述
 		}																//	結束else敘述
@@ -2153,14 +2153,14 @@ BMP24RGB *ImageOCR(const BMP24RGB *image,const int xsize,const int ysize)
 		PixelLocationY = floor(loop_num / xsize);						//	計算PixelLocationY
 		if( (PixelLocationX < 150) || (PixelLocationX > (xsize - 150)) || (PixelLocationY < 150) || (PixelLocationY > (ysize - 150)))
 		//	檢測邊界點像素(像素點與邊界最短距離若小於150)
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			
 		}																//	結束if敘述
 		else															//	若非邊界點像素
 		{																//	進入else敘述
 			if( (image[loop_num].R == 0) || (image[loop_num].G == 0) || (image[loop_num].B == 0) )
 			//	若R、G、B像素值任一為0(可能為文字)
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				YArray[PixelLocationY] = true;							//	將布林變數改為true
 			}															//	結束if敘述
 		}																//	結束else敘述
@@ -2231,7 +2231,7 @@ BMP24RGB *BMP24RGBGradient(const BMP24RGB *image,const int xsize,const int ysize
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -2240,7 +2240,7 @@ BMP24RGB *BMP24RGBGradient(const BMP24RGB *image,const int xsize,const int ysize
 	{																	//	進入for迴圈
 		if( (loop_num < xsize) || ( (loop_num % xsize) == 0) || ( ((loop_num + 1) % xsize) == 0) || (loop_num >= (xsize*(ysize-1))))
 		//	檢測邊界點像素
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			OutputData[loop_num].R = image[loop_num].R;					//	邊界點不處理
 			OutputData[loop_num].G = image[loop_num].G;					//	邊界點不處理
 			OutputData[loop_num].B = image[loop_num].B;					//	邊界點不處理
@@ -2262,7 +2262,7 @@ BMP24RGB *BMP24RGBGradient(const BMP24RGB *image,const int xsize,const int ysize
 			long double Magnitude, Direction;							//	宣告Magnitude與Direction變數記錄梯度大小與方向
 			Magnitude = sqrt(pow(Gx, 2) + pow(Gy, 2));					//	計算Magnitude
 			if((Gx > 0) && (Gy >= 0)) 									//	若Gx大於0且Gy大於等於0
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				Direction = atan((long double)Gy / (long double)Gx) * ( 180 / M_PI);
 				//	計算梯度方向(Direction)－第一象限
 			}															//	結束if敘述
@@ -2305,7 +2305,7 @@ BMP24RGB *BMP24RGBGradient(const BMP24RGB *image,const int xsize,const int ysize
 				);														//	Gy計算
 			Magnitude = sqrt(pow(Gx, 2) + pow(Gy, 2));					//	計算Magnitude
 			if((Gx > 0) && (Gy >= 0)) 									//	若Gx大於0且Gy大於等於0
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				Direction = atan((long double)Gy / (long double)Gx) * ( 180 / M_PI);
 				//	計算梯度方向(Direction)－第一象限
 			}															//	結束if敘述
@@ -2348,7 +2348,7 @@ BMP24RGB *BMP24RGBGradient(const BMP24RGB *image,const int xsize,const int ysize
 				);														//	Gy計算
 			Magnitude = sqrt(pow(Gx, 2) + pow(Gy, 2));					//	計算Magnitude
 			if((Gx > 0) && (Gy >= 0)) 									//	若Gx大於0且Gy大於等於0
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				Direction = atan((long double)Gy / (long double)Gx) * ( 180 / M_PI);
 				//	計算梯度方向(Direction)－第一象限
 			}															//	結束if敘述
@@ -2388,7 +2388,7 @@ BMP24RGB *BMP24RGBSobelEdge(const BMP24RGB *image,const int xsize,const int ysiz
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -2397,7 +2397,7 @@ BMP24RGB *BMP24RGBSobelEdge(const BMP24RGB *image,const int xsize,const int ysiz
 	{																	//	進入for迴圈
 		if( (loop_num < xsize) || ( (loop_num % xsize) == 0) || ( ((loop_num + 1) % xsize) == 0) || (loop_num >= (xsize*(ysize-1))))
 		//	檢測邊界點像素
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			OutputData[loop_num].R = image[loop_num].R;					//	邊界點不處理
 			OutputData[loop_num].G = image[loop_num].G;					//	邊界點不處理
 			OutputData[loop_num].B = image[loop_num].B;					//	邊界點不處理
@@ -2419,7 +2419,7 @@ BMP24RGB *BMP24RGBSobelEdge(const BMP24RGB *image,const int xsize,const int ysiz
 			long double Magnitude, Direction;							//	宣告Magnitude與Direction變數記錄梯度大小與方向
 			Magnitude = sqrt(pow(Gx, 2) + pow(Gy, 2));					//	計算Magnitude
 			if((Gx > 0) && (Gy >= 0)) 									//	若Gx大於0且Gy大於等於0
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				Direction = atan((long double)Gy / (long double)Gx) * ( 180 / M_PI);
 				//	計算梯度方向(Direction)－第一象限
 			}															//	結束if敘述
@@ -2462,7 +2462,7 @@ BMP24RGB *BMP24RGBSobelEdge(const BMP24RGB *image,const int xsize,const int ysiz
 				);														//	Gy計算
 			Magnitude = sqrt(pow(Gx, 2) + pow(Gy, 2));					//	計算Magnitude
 			if((Gx > 0) && (Gy >= 0)) 									//	若Gx大於0且Gy大於等於0
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				Direction = atan((long double)Gy / (long double)Gx) * ( 180 / M_PI);
 				//	計算梯度方向(Direction)－第一象限
 			}															//	結束if敘述
@@ -2505,7 +2505,7 @@ BMP24RGB *BMP24RGBSobelEdge(const BMP24RGB *image,const int xsize,const int ysiz
 				);														//	Gy計算
 			Magnitude = sqrt(pow(Gx, 2) + pow(Gy, 2));					//	計算Magnitude
 			if((Gx > 0) && (Gy >= 0)) 									//	若Gx大於0且Gy大於等於0
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				Direction = atan((long double)Gy / (long double)Gx) * ( 180 / M_PI);
 				//	計算梯度方向(Direction)－第一象限
 			}															//	結束if敘述
@@ -2545,7 +2545,7 @@ BMP24RGB *RGBHistogramEqualization(const BMP24RGB *image,const int xsize,const i
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述
@@ -2652,7 +2652,7 @@ BMP24RGB *BMPHaarWavelet(const BMP24RGB *image,const int xsize,const int ysize, 
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -2661,7 +2661,7 @@ BMP24RGB *BMPHaarWavelet(const BMP24RGB *image,const int xsize,const int ysize, 
 	{																	//	進入for迴圈
 		if( (loop_num < xsize) || ( (loop_num % xsize) == 0) || ( ((loop_num + 1) % xsize) == 0) || (loop_num >= (xsize*(ysize-1))))
 		//	檢測邊界點像素
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			OutputData[loop_num].R = image[loop_num].R;					//	邊界點不處理
 			OutputData[loop_num].G = image[loop_num].G;					//	邊界點不處理
 			OutputData[loop_num].B = image[loop_num].B;					//	邊界點不處理
@@ -2669,7 +2669,7 @@ BMP24RGB *BMPHaarWavelet(const BMP24RGB *image,const int xsize,const int ysize, 
 		else															//	若非邊界點像素
 		{																//	進入else敘述
 			if(mode==HorizontalHighPass)								//	若mode為垂直高通模式
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				OutputData[loop_num].R = abs(
 					image[loop_num-1].R 	* (-1) + image[loop_num].R		* 0 + image[loop_num+1].R 	* 1
 					);													//	垂直高通模式計算
@@ -2738,12 +2738,12 @@ BMP24RGB *BMPHaarWavelet2(const BMP24RGB *image,const int xsize,const int ysize,
 	BMP24RGB *OutputData;												//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
 	if(mode == HighHigh)												//	若模式為HighHigh
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		OutputData = BMPHaarWavelet(BMPHaarWavelet(image,xsize,ysize,HorizontalHighPass),xsize,ysize,VerticalHighPass);
 		//	呼叫BMPHaarWavelet副程式HorizontalHighPass模式，再呼叫BMPHaarWavelet副程式VerticalHighPass模式
 	}																	//	結束if敘述
@@ -2800,7 +2800,7 @@ HSV *HSVHistogramEqualization(const HSV *image,const int xsize,const int ysize)
 	HSV *OutputData;													//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (HSV*)malloc(xsize * ysize * sizeof(HSV));				//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述
@@ -2852,7 +2852,7 @@ BMP24RGB *HueToBMP24RGB(const HSV *image,const int xsize,const int ysize)
 	OutputImage = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));
 	//	配置OutputImage指標記憶體大小
 	if (OutputImage == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -2875,7 +2875,7 @@ BMP24RGB *SaturationToBMP24RGB(const HSV *image,const int xsize,const int ysize)
 	OutputImage = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));
 	//	配置OutputImage指標記憶體大小
 	if (OutputImage == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -2897,7 +2897,7 @@ BMP24RGB *ValueToBMP24RGB(const HSV *image,const int xsize,const int ysize)
 	BMP24RGB *OutputImage;												//	宣告OutputImage指標變數，記錄輸出圖像資料
 	OutputImage = (BMP24RGB*)malloc(xsize * ysize * sizeof(BMP24RGB));	//	配置OutputImage指標記憶體大小
 	if (OutputImage == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述 
@@ -2916,7 +2916,7 @@ HSV *HSVSkin(const HSV *image,const int xsize,const int ysize)
 	HSV *OutputData;													//	宣告OutputData指標變數，記錄圖像資料運算結果
 	OutputData = (HSV*)malloc(xsize * ysize * sizeof(HSV));				//	配置OutputData指標記憶體大小
 	if (OutputData == NULL) 											//	若建立影像空間失敗 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("記憶體分配錯誤!");										//	顯示"記憶體分配錯誤!" 
 		return NULL;													//	傳回NULL，並結束程式 
 	}																	//	結束if敘述
@@ -2938,7 +2938,7 @@ HSV *HSVSkin(const HSV *image,const int xsize,const int ysize)
 			( HData <= (long double)50.0 ) && 							//	且HData小於等於50
 			( SData >= (long double)0.23 ) && 							//	且SData大於等於0.23
 			( SData >= (long double)0.68 ) )							//	且SData小於等於0.68
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			OutputData[loop_num].H = image[loop_num].H;					//	填入原像素值
 			OutputData[loop_num].S = image[loop_num].S;					//	填入原像素值
 			OutputData[loop_num].V = image[loop_num].V;					//	填入原像素值
@@ -2963,7 +2963,7 @@ unsigned char BmpFillingByteCalc(const unsigned int xsize)				//	BmpFillingByteC
 bool FileExistCheck(char *file_name)									//	FileExistCheck(檔案存在檢查)副程式
 {																		//	進入FileExistCheck(檔案存在檢查)副程式
 	if( access( file_name, F_OK ) != -1 )								//	若檔案存在
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
     	return True;													//	傳回True
 	} 																	//	結束if敘述
 	else 																//	若檔案不存在
@@ -2974,7 +2974,7 @@ bool FileExistCheck(char *file_name)									//	FileExistCheck(檔案存在檢查)副程
 bool FileReadPermissionCheck(const char *file_name)						//	FileReadPermissionCheck(檔案讀取權限檢查)副程式
 {																		//	進入FileReadPermissionCheck(檔案讀取權限檢查)副程式
 	if( access( file_name, R_OK ) != -1 )								//	若檔案可讀取
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
     	return True;													//	傳回True
 	} 																	//	結束if敘述
 	else 																//	若檔案不可讀取
@@ -2985,7 +2985,7 @@ bool FileReadPermissionCheck(const char *file_name)						//	FileReadPermissionCh
 bool FileWritePermissionCheck(const char *file_name)					//	FileWritePermissionCheck(檔案寫入權限檢查)副程式
 {																		//	進入FileWritePermissionCheck(檔案寫入權限檢查)副程式
 	if( access( file_name, W_OK ) != -1 )								//	若檔案可讀取
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
     	return True;													//	傳回True
 	} 																	//	結束if敘述
 	else 																//	若檔案不可讀取
@@ -3004,14 +3004,14 @@ bool FileWrite(const char *file_name,const char *input_str,const char *mode)
 	FILE *file_point;													//	宣告一file_point指標，控制檔案讀寫
 	if (strcmp(mode, "w") != 0 && strcmp(mode, "a") != 0 && strcmp(mode, "w+") != 0 && strcmp(mode, "a+") != 0)
 	//	若mode參數不為"w"亦不為"a"亦不為"w+"亦不為"a+"
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("FileWrite:mode ERROR!\n");								//	顯示"FileWrite:mode ERROR!"並換行
 		return False;													//	回傳False並結束副程式返回
 	}																	//	結束if敘述
 	if( strcmp(mode, "a") == 0 || strcmp(mode, "a+") == 0 )				//	若mode參數為"a"或"a+"(擴充模式)
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		if (FileWritePermissionCheck(file_name) == False)				//	若檔案無法寫入
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			printf("FileWrite:permission ERROR!\n");					//	顯示"FileWrite:permission ERROR!"並換行
 			return False;												//	回傳False並結束副程式返回
 		}																//	結束if敘述
@@ -3043,10 +3043,10 @@ unsigned char *UCharBubbleSort(	const unsigned char *InputData,
 		//	以迴圈依序比較數值
 		{																//	進入for迴圈
 			if( Mode == 0 )												//	若模式為由小排至大
-			{															//	進入if敘述
+			{															//	if statement start, 進入if敘述
 				if(OutputData[LoopNumber1] > OutputData[LoopNumber1 + 1])
 				//	若較大的數值在前
-				{														//	進入if敘述
+				{														//	if statement start, 進入if敘述
 					unsigned char TempNumber;							//	宣告TempNumber暫存變數(用於數值交換)
 					TempNumber = OutputData[LoopNumber1];				//	數值交換
 					OutputData[LoopNumber1] = OutputData[LoopNumber1 + 1];
@@ -3058,7 +3058,7 @@ unsigned char *UCharBubbleSort(	const unsigned char *InputData,
 			{															//	進入else if敘述
 				if(OutputData[LoopNumber1] < OutputData[LoopNumber1 + 1])
 				//	若較小的數值在前
-				{														//	進入if敘述
+				{														//	if statement start, 進入if敘述
 					unsigned char TempNumber;							//	宣告TempNumber暫存變數(用於數值交換)
 					TempNumber = OutputData[LoopNumber1];				//	數值交換
 					OutputData[LoopNumber1] = OutputData[LoopNumber1 + 1];
@@ -3076,7 +3076,7 @@ int Compare(const void *data1,const void *data2)						//	Compare副程式
 	int *ptr1 = (int*)data1;											//	宣告*ptr1整數指標變數
 	int *ptr2 = (int*)data2;											//	宣告*ptr2整數指標變數
 	if(*ptr1 < *ptr2)													//	若*ptr1數值較小
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		return -1;														//	傳回-1，並結束副程式
 	}																	//	結束if敘述
 	else if(*ptr1 > *ptr2)												//	若*ptr1數值較大
@@ -3095,7 +3095,7 @@ unsigned long long int CountCharPointStr(const char *Input_string, const bool De
 	while (Input_string[count_num] != '\0')								//	若非字串結尾
 	{																	//	進入while敘述
 		if(Detail == True)												//	若Detail參數為True
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			printf("第%d個字元為：%c\n",count_num + 1,Input_string[count_num]);
 			//	顯示計數細節
 		}																//	結束if敘述
@@ -3130,7 +3130,7 @@ void ShowLongDouble(const long double InputNumber)						//	ShowLongDouble副程式
 	long double DisplayNumber;											//	宣告DisplayNumber變數，用於記錄顯示數值
 	//***處理正負號***
 	if(InputNumber < 0)													//	若InputNumber輸入數值為負數
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		DisplayNumber = (long double)0.0 - InputNumber;					//	填入DisplayNumber數值
 		printf("-");													//	顯示負號"-"
 	}																	//	結束if敘述
@@ -3152,7 +3152,7 @@ void ShowLongDouble(const long double InputNumber)						//	ShowLongDouble副程式
 	int DisplayStartTimes = TimesNumber;								//	宣告DisplayStartTimes為整數(int)變數，用以記錄起始顯示數字次方
 	int DisplayDigit;													//	宣告DisplayDigit為整數(int)變數，用以記錄顯示位數
 	if(DisplayStartTimes > 14)											//	若DisplayStartTimes(起始顯示數字次方)大於14(即欲顯示數值InputNumber大於10^14)
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		DisplayDigit = DisplayStartTimes;								//	給定DisplayDigit顯示位數為起始顯示數字次方數
 	}																	//	結束if敘述
 	else																//	若欲顯示數值InputNumber不大於10^14
@@ -3162,13 +3162,13 @@ void ShowLongDouble(const long double InputNumber)						//	ShowLongDouble副程式
 	while(TimesNumber >= DisplayStartTimes - DisplayDigit)				//	
 	{																	//	進入while敘述
 		if(TimesNumber == -1)											//	若TimesNumber(次方)為-1時
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			printf(".");												//	顯示小數點
 		}																//	結束if敘述
 		DisplayChar = floor(DisplayNumber/(long double)pow(10,TimesNumber)) - pow(10,1) * floor(DisplayNumber/(long double)pow(10,(TimesNumber + 1)));
 		//	取出顯示數值
 		if( (DisplayChar >= 0) && (DisplayChar <= 9) )					//	若取出之數值介於0~9之間
-		{																//	進入if敘述
+		{																//	if statement start, 進入if敘述
 			printf("%d",DisplayChar);									//	顯示數值
 		}																//	結束if敘述
 		else															//	若取出數值錯誤
@@ -3203,14 +3203,14 @@ void BmpReadXSizeTest(void)												//	BmpReadXSizeTest副程式
 	bool FileCheck;														//	宣告FileCheck布林變數，用以記錄檔案是否存在(若檔案存在為true)
 	FileCheck = FileExistCheck(BMPImage1.FILENAME);						//	呼叫FileExistCheck副程式檢查檔案是否存在
 	if(FileCheck == false)												//	若檔案不存在
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("圖檔不存在!");											//	顯示"圖檔不存在!"
 		return;															//	程式結束 
 	}																	//	結束if敘述
 	BMPImage1.XSIZE = (unsigned int)BmpReadXSize(BMPImage1.FILENAME,false);
 	//	讀取輸入BMP圖檔寬度 
 	if(BMPImage1.XSIZE == -1)											//	若XSIZE為-1(代表讀取檔案失敗)	
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("讀取圖檔大小資訊失敗!");								//	顯示"讀取圖檔大小資訊失敗!"
 		return;															//	程式結束 
 	}																	//	結束if敘述 
@@ -3229,14 +3229,14 @@ void BmpReadYSizeTest(void)												//	BmpReadYSizeTest副程式
 	bool FileCheck;														//	宣告FileCheck布林變數，用以記錄檔案是否存在(若檔案存在為true)
 	FileCheck = FileExistCheck(BMPImage1.FILENAME);						//	呼叫FileExistCheck副程式檢查檔案是否存在
 	if(FileCheck == false)												//	若檔案不存在
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("圖檔不存在!");											//	顯示"圖檔不存在!"
 		return;															//	程式結束 
 	}																	//	結束if敘述
 	BMPImage1.YSIZE = (unsigned int)BmpReadYSize(BMPImage1.FILENAME,false);
 	//	讀取輸入BMP圖檔高度 
 	if(BMPImage1.YSIZE == -1)											//	若YSIZE為-1(代表讀取檔案失敗)	
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("讀取圖檔大小資訊失敗!");								//	顯示"讀取圖檔大小資訊失敗!"
 		return;															//	程式結束 
 	}																	//	結束if敘述 
@@ -3255,14 +3255,14 @@ void BmpReadTest(void)													//	BmpReadTest副程式
 	bool FilenameExtension = false;										//	設定使用者輸入圖檔名稱不含副檔名
 	//***檢查輸入檔名是否空白***
 	if(filename == NULL)												//	若輸入filename為NULL
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("檔案路徑輸入為NULL\n");									//	顯示"檔案路徑輸入為NULL"並換行
 		return;															//	結束副程式
 	}																	//	結束if敘述
 	//***副檔名填補***
 	char fname_bmp[MAX_PATH];											//	宣告檔案名稱fname_bmp陣列變數(最多MAX_PATH個字元) 
 	if(FilenameExtension == false)										//	若輸入參數fname_bmp不具副檔名
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		sprintf(fname_bmp, "%s.bmp", filename);							//	產生完整檔案路徑並存放至fname_bmp陣列
 	}																	//	結束if敘述
 	else																//	若輸入參數fname_bmp已包含副檔名
@@ -3271,12 +3271,12 @@ void BmpReadTest(void)													//	BmpReadTest副程式
 	}																	//	結束else敘述
 	//***確認檔案存在及可讀性***
 	if (FileExistCheck(fname_bmp) == false)								//	若檔案不存在 
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("檔案不存在！\n");										//	顯示錯誤訊息 
 		return;															//	結束副程式
 	}																	//	結束if敘述	 
 	if (FileReadPermissionCheck(fname_bmp) == false)					//	若檔案不可讀取
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("讀取檔案錯誤！\n");										//	顯示錯誤訊息
 		return;															//	結束副程式
 	}																	//	結束if敘述
@@ -3284,7 +3284,7 @@ void BmpReadTest(void)													//	BmpReadTest副程式
 	XSIZE = (unsigned int)BmpReadXSize(fname_bmp,true);					//	讀取輸入BMP圖檔寬度(路徑已包含副檔名) 
 	YSIZE = (unsigned int)BmpReadYSize(fname_bmp,true);					//	讀取輸入BMP圖檔高度(路徑已包含副檔名) 
 	if( (XSIZE == -1) || (YSIZE == -1) )								//	若XSIZE或YSIZE為-1(代表讀取檔案失敗)	
-	{																	//	進入if敘述 
+	{																	//	if statement start, 進入if敘述 
 		printf("讀取圖檔大小資訊失敗!");								//	顯示"讀取圖檔大小資訊失敗!"
 		return;															//	結束副程式
 	}																	//	結束if敘述
@@ -3299,7 +3299,7 @@ void BmpReadTest(void)													//	BmpReadTest副程式
 		IMAGE_DATA = (unsigned char*)malloc((XSIZE * 3 + FILLINGBYTE) * YSIZE * sizeof(unsigned char));
 		//	計算並建立影像大小空間 
 		if (IMAGE_DATA == NULL) 										//	若建立影像空間失敗 
-		{																//	進入if敘述 
+		{																//	if statement start, 進入if敘述 
 			printf("記憶體分配錯誤!");									//	顯示"記憶體分配錯誤!" 
 			return;														//	結束副程式
 		}																//	結束if敘述 
@@ -3328,7 +3328,7 @@ void BmpWriteV2Test(void)												//	BmpWriteV2Test副程式
 	printf("%s\n",BMPImage1.FILENAME);									//	顯示讀取圖檔之檔名
 	
 	if(BMPImage1.IMAGE_DATA == NULL)									//	若讀取BMP圖檔發生錯誤
-	{																	//	進入if敘述
+	{																	//	if statement start, 進入if敘述
 		printf("圖檔物件錯誤!");										//	顯示"圖檔物件錯誤!" 
 		return;															//	結束程式 
 	}																	//	結束if敘述
