@@ -1,5 +1,5 @@
 /*	數位影像處理程式
-	Develop by Jimmy
+	Develop by Jimmy Hu
 	This program is licensed under GNU General Public License v3.
 	版本資訊可參考VersionInformation.txt檔案
  */
