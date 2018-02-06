@@ -147,7 +147,7 @@ unsigned long BmpReadYSize(const char *, const bool);					//	宣告BMP圖檔ysize(高
 	副程式輸入為(欲存放原始圖檔資料之unsigned char型態指標,欲讀取圖檔之寬度,欲讀取圖檔之高度,欲讀取之圖檔路徑,FilenameExtension副檔名資訊)
 	副程式輸出：若順利讀取圖檔則傳回0，反之傳回-1
  */
-char BmpRead(unsigned char*,const int,const int, const char *, const bool);
+char BmpRead(unsigned char*, const int, const int, const char *, const bool);
 //	宣告BmpRead(BMP圖檔讀取)副程式
 /*	BmpFileRead副程式整合BmpFillingByteCalc(BMP圖檔填補位元計算)副程式、
 	BmpReadFilesize(BMP圖檔檔案大小讀取)副程式、
@@ -159,6 +159,11 @@ char BmpRead(unsigned char*,const int,const int, const char *, const bool);
 	圖像寬度(XSIZE)、圖像高度(YSIZE)、填補位元(FILLINGBYTE)與圖像資料(IMAGE_DATA))
  */
 BMPIMAGE BmpFileRead(const char *, const bool);							//	宣告BmpFileRead副程式
+/*	FreeBMPIMAGE副程式用於釋放BMPIMAGE物件記憶體空間
+	副程式輸入為(BMPIMAGE物件)
+	副程式輸出為void
+ */
+void FreeBMPIMAGE(BMPIMAGE InputBMPIMAGE);								//	宣告FreeBMPIMAGE副程式
 /*	BmpWriteV1副程式用於寫入BMP圖檔
 	副程式輸入為(欲寫入圖檔之unsigned char型態指標資料,欲寫入圖檔之寬度,欲寫入圖檔之高度,欲寫入之圖檔路徑)
 	副程式輸出：若順利寫入圖檔則傳回0，反之傳回-1
@@ -868,7 +873,7 @@ int main(int argc, char** argv)											//	主程式
 	
 	BmpWriteV1(ArrayToRAWImage(ImageSmoothing33V2(RGBImage1.IMAGE_DATA,RGBImage1.XSIZE, RGBImage1.YSIZE), RGBImage1.XSIZE, RGBImage1.YSIZE), BMPImage1.XSIZE, BMPImage1.YSIZE, "BMPImageSmoothing33");
 	
-	
+	FreeBMPIMAGE(BMPImage1);
 	return 0;															//	傳回0 
 }																		//	結束主程式 
 //----BMP圖檔大小(Byte)讀取副程式----
@@ -1069,6 +1074,11 @@ BMPIMAGE BmpFileRead(const char *filename, const bool FilenameExtension)
 	}																	//	結束else敘述
 	return OutputData;													//	回傳讀取資料
 }																		//	結束BmpFileRead副程式
+
+void FreeBMPIMAGE(BMPIMAGE InputBMPIMAGE)								//	FreeBMPIMAGE function, FreeBMPIMAGE副程式
+{																		//	FreeBMPIMAGE function start, 進入FreeBMPIMAGE副程式
+	free((void *)InputBMPIMAGE.IMAGE_DATA);								//	釋放BMPIMAGE物件記憶體空間
+}																		//	FreeBMPIMAGE function end, 結束FreeBMPIMAGE副程式
 //----BMP圖檔寫入副程式---- 
 /*	BmpWriteV1副程式程式執行BMP圖檔寫入，header陣列為BMP圖檔之檔頭 
  *
