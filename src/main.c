@@ -807,7 +807,7 @@ void InitialIMGArrayTest(void);											//	宣告InitialIMGArrayTest副程式
 	副程式輸入為void
 	副程式輸出為void
  */
-void BmpReadFilesizeTest(void);
+void BmpReadFilesizeTest(void);											//	宣告BmpReadFilesizeTest副程式
 /*	BmpReadXSizeTest副程式用於測試BmpReadXSize副程式
 	本測試副程式之輸入、輸出皆為void，所有參數皆設計於測試副程式中，
 	以觀察使用副程式所需宣告與語法
