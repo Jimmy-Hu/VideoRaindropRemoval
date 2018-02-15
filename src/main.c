@@ -3,7 +3,7 @@
 	This program is licensed under GNU General Public License v3.
 	版本資訊可參考VersionInformation.txt檔案
  */
-//-----引入標頭檔-----
+//-----include header files, 引入標頭檔-----
 #include <math.h>														//	引入標頭檔math.h
 #include <stdbool.h>													//	引入標頭檔stdbool.h
 #include <stdio.h>														//	引入標頭檔stdio.h
