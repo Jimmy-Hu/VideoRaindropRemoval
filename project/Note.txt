@@ -1,0 +1,169 @@
+Image path:..\\Images\\LennaTestBMP
+Compile results
+Update RemoveComment project
+Adjist typing layout
+
+function count:65
+
+記憶體管理注意：
+1. BmpFileRead副程式建立一BMPIMAGE物件，使用完畢後須使用FreeBMPIMAGE副程式釋放記憶體空間。
+2. 
+
+## 使用malloc配置記憶體之副程式列表：
+
+副程式名稱, 是否有使用malloc配置記憶體空間
+- BmpReadFilesize(BMP圖檔大小(Byte)讀取副程式), 否, 
+- BmpReadXSize(BMP圖檔xsize(寬度)讀取副程式), 否, 
+- BmpReadYSize(BMP圖檔ysize(高度)讀取副程式), 否, 
+- BmpRead(BMP圖檔讀取副程式), 否, 
+- BmpFileRead(BMP圖檔讀取副程式), 是,
+- FreeBMPIMAGE(釋放BMPIMAGE物件記憶體空間副程式), 否, 
+- BmpWriteV1(寫入圖檔副程式), 否, 
+- BmpWriteV2(寫入圖檔副程式), 否, 
+
+- ViewBMPImage(呼叫圖片檢視器開啟圖檔副程式), 否, 
+
+- InitialIMGArray(圖檔初始化副程式), 是,
+
+- RAWImageToArray(BMP圖檔之圖像資料轉換至RGB型態二維陣列),  是,
+- ArrayToRAWImage(將RGB型態圖像二維陣列轉換至符合BMP圖檔格式之圖像資料),  是,
+- BMP24RGBToHSV(將BMP24RGB型態之RGB像素資料轉換至HSV色彩空間),  是,
+- HSVToBMP24RGB(將HSV型態之像素資料轉換至BMP24RGB色彩空間),  是,
+
+- ImageDataToTxt(將圖像影像RGB資料寫入txt檔), 否, 
+- HSVDataToTxt(將HSV型態影像資料寫入txt檔), 否, 
+
+- ImgDifference2(兩BMP24RGB型態圖像像素之相減運算),  是,
+- BMP24RGB2or(兩BMP24RGB型態圖像像素之OR運算),  是,
+
+- BmpToGraylevel(將BMP24RGB型態圖像轉為灰階圖像，使像素點R=G=B),  是,
+
+- BmpConvolution33(圖像3*3遮罩摺積副程式),  是,
+- BmpConvolution55(圖像5*5遮罩摺積副程式),  是,
+- BmpConvolution77(圖像7*7遮罩摺積副程式),  是,
+- BmpConvolution(圖像摺積副程式，可給定任意遮罩大小),  是,
+- ImageSmoothing33V1(BMP圖檔3*3Mask平滑濾波 Version 1副程式),  是,
+- ImageSmoothing33V2(BMP圖檔3*3Mask平滑濾波 Version 2副程式), 否, 
+- ImageSmoothing55(BMP圖檔5*5Mask平滑濾波副程式), 否, 
+- ImageSmoothing77(BMP圖檔7*7Mask平滑濾波副程式), 否, 
+- ImageSmoothing(BMP圖檔平滑濾波副程式，可給定任意遮罩大小),  是,
+- MedianFilter33(BMP圖檔3*3中值濾波副程式),  是,
+- GaussianBlur33V1(3*3高斯濾波 Version 1),  是,
+- GaussianBlur33V2(3*3高斯濾波 Version 2), 否, 
+- GaussianBlur(圖像高斯濾波副程式，可給定任意遮罩大小),  是,
+- GaussianFigure2D(建立二維高斯圖像),  是,
+- NormalDistribution2D(二維高斯函數), 否, 
+
+- CutWriteAround(刪去圖片白邊框副程式), 
+- ImageOCR(影像文字辨識副程式),  是,
+- BMP24RGBGradient(梯度計算副程式),  是,
+- BMP24RGBSobelEdge(Sobel邊緣偵測副程式),  是,
+- RGBHistogramEqualization(直方圖等化副程式),  是,
+- BMPHaarWavelet(Haar小波轉換計算副程式),  是,
+- BMPHaarWavelet2(二階Haar小波轉換計算副程式),  是,
+
+- HSVHistogramEqualization(HSV之Value直方圖等化副程式),  是,
+- HueToBMP24RGB(將Hue轉換至圖檔),  是,
+- SaturationToBMP24RGB(將Saturation轉換至圖檔),  是,
+- ValueToBMP24RGB(將Value轉換至圖檔),  是,
+- HSVSkin(HSV色彩空間皮膚偵測副程式),  是,
+
+- BmpFillingByteCalc(BMP圖檔填補位元計算副程式), 否, 
+- FileExistCheck(檔案存在檢查副程式), 否, 
+- FileReadPermissionCheck(檔案讀取權限檢查副程式), 否, 
+- FileWritePermissionCheck(檔案寫入權限檢查副程式), 否, 
+- FileWrite(檔案寫入副程式), 否, 
+- UCharBubbleSort(unsigned char型態變數氣泡排序副程式),  是,
+- Compare(變數比較副程式), 否, 
+- CountCharPointStr(計算字串指標長度副程式), 否, 
+- Show_char_point_str(顯示字串副程式), 否, 
+- ShowUCharPointStr(顯示無號字串副程式), 否, 
+- ShowLongDouble(顯示長浮點數副程式), 否, 
+
+- InitialIMGArrayTest(InitialIMGArray副程式測試), 否, 
+- BmpReadFilesizeTest(BmpReadFilesize副程式測試), 否, 
+- BmpReadXSizeTest(BmpReadXSizeTest副程式測試), 否, 
+- BmpReadYSizeTest(BmpReadYSizeTest副程式測試), 否, 
+- BmpReadTest(BmpReadTest副程式測試),  是, 
+- BmpWriteV2Test(BmpWriteV2Test副程式測試),  是, 
+- 
+- 
+- 
+- 
+
+
+
+unsigned long BmpReadFilesize(const char *, const bool);				//	宣告BMP圖檔大小(Byte)讀取副程式BmpReadFilesize
+unsigned long BmpReadXSize(const char *, const bool);					//	宣告BMP圖檔xsize(寬度)讀取副程式BmpReadXSize
+unsigned long BmpReadYSize(const char *, const bool);					//	宣告BMP圖檔ysize(高度)讀取副程式BmpReadYSize
+char BmpRead(unsigned char*, const int, const int, const char *, const bool);
+BMPIMAGE BmpFileRead(const char *, const bool);							//	宣告BmpFileRead副程式
+void FreeBMPIMAGE(BMPIMAGE InputBMPIMAGE);								//	宣告FreeBMPIMAGE副程式
+int BmpWriteV1(const unsigned char*,const int,const int,const char*); 	//	宣告BmpWriteV1(BMP圖檔寫入)副程式
+int BmpWriteV2(const BMPIMAGE); 										//	宣告BmpWriteV2(BMP圖檔寫入)副程式
+
+void ViewBMPImage(const char *);										//	宣告ViewBMPImage(BMP圖片檢視)副程式(以Windows圖片檢視器開啟)
+
+BMP24RGB *InitialIMGArray(const int, const int);						//	宣告InitialIMGArray副程式
+
+BMP24RGB *RAWImageToArray(const unsigned char*, const int, const int);	//	宣告RAWImageToArray(BMP圖檔資料至陣列轉換)副程式
+unsigned char *ArrayToRAWImage(const BMP24RGB*,const int,const int);	//	宣告陣列至BMP圖檔資料轉換副程式
+HSV *BMP24RGBToHSV(const BMP24RGB*,const int,const int);				//	宣告BMP24RGB型態至HSV轉換副程式
+BMP24RGB *HSVToBMP24RGB(const HSV*,const int,const int);				//	宣告BMP24RGB型態至HSV轉換副程式
+
+bool ImageDataToTxt(const char*,const BMP24RGB*,const int,const int);	//	宣告ImageDataToTxt(圖像影像資料寫入txt檔)副程式
+bool HSVDataToTxt(const char*, const HSV*, const int, const int);		//	宣告HSVDataToTxt(HSV型態影像資料寫入txt檔)副程式
+
+BMP24RGB *ImgDifference2(const BMP24RGB*,const BMP24RGB*,const int,const int);
+BMP24RGB *BMP24RGB2or(const BMP24RGB*,const BMP24RGB*,const int,const int);
+
+BMP24RGB *BmpToGraylevel(const BMP24RGB*, const int, const int);		//	宣告BMP圖片資料轉灰階副程式
+
+BMP24RGB *BmpConvolution33(const BMP24RGB*,const int,const int,const long double[]);
+BMP24RGB *BmpConvolution55(const BMP24RGB*,const int,const int,const long double[]);
+BMP24RGB *BmpConvolution77(const BMP24RGB*,const int,const int,const long double[]);
+BMP24RGB *BmpConvolution(const int, const BMP24RGB*,const int,const int,const long double[]);
+BMP24RGB *ImageSmoothing33V1(const BMP24RGB*,const int,const int);		//	宣告ImageSmoothing33V1(BMP圖檔3*3Mask平滑濾波 Version 1)副程式
+BMP24RGB *ImageSmoothing33V2(const BMP24RGB*,const int,const int);		//	宣告ImageSmoothing33V2(BMP圖檔3*3Mask平滑濾波 Version 2)副程式
+BMP24RGB *ImageSmoothing55(const BMP24RGB*,const int,const int);		//	宣告ImageSmoothing55(BMP圖檔5*5Mask平滑濾波)副程式
+BMP24RGB *ImageSmoothing77(const BMP24RGB*,const int,const int);		//	宣告ImageSmoothing77(BMP圖檔7*7Mask平滑濾波)副程式
+BMP24RGB *ImageSmoothing(const int, const BMP24RGB*,const int,const int);
+BMP24RGB *MedianFilter33(const BMP24RGB*,const int,const int);			//	宣告MedianFilter33(BMP圖檔3*3中值濾波)副程式
+BMP24RGB *GaussianBlur33V1(const BMP24RGB*,const int,const int,const long double);
+BMP24RGB *GaussianBlur33V2(const BMP24RGB*, const int, const int, const long double);
+BMP24RGB *GaussianBlur(const int, const BMP24RGB*, const int, const int, const long double);
+BMP24RGB *GaussianFigure2D(const int, const int, const long double);	//	宣告GaussianFigure2D(二維高斯圖像)生成副程式
+long double NormalDistribution2D(long double, long double, long double);//	宣告NormalDistribution2D(二維常態分布計算)副程式
+
+CutWriteAround(刪去圖片白邊框副程式)??
+BMP24RGB *ImageOCR(const BMP24RGB*,const int,const int);				//	宣告ImageOCR(影像OCR)副程式
+BMP24RGB *BMP24RGBGradient(const BMP24RGB*,const int,const int);		//	宣告BMP24RGBGradient(BMP圖片資料梯度計算)副程式
+BMP24RGBSobelEdge(BMP圖片資料Sobel邊緣偵測)副程式
+RGBHistogramEqualization(RGB灰階影像直方圖等化)副程式
+BMPHaarWavelet副程式
+BMPHaarWavelet2副程式
+
+HSVHistogramEqualization(HSV影像直方圖等化)副程式
+HueToBMP24RGB副程式
+SaturationToBMP24RGB副程式
+ValueToBMP24RGB副程式
+HSVSkin副程式
+
+BmpFillingByteCalc(BMP圖檔填補位元計算副程式)
+FileExistCheck(檔案存在檢查)副程式
+FileReadPermissionCheck(檔案讀取權限檢查)副程式
+FileWritePermissionCheck(檔案寫入權限檢查)副程式
+FileWrite(檔案寫入)副程式
+UCharBubbleSort副程式
+Compare副程式(供qsort排序使用)
+CountCharPointStr副程式
+Show_char_point_str(顯示字元指標)副程式
+ShowUCharPointStr(顯示無號字元指標)副程式
+ShowLongDouble副程式
+
+InitialIMGArrayTest副程式
+BmpReadFilesizeTest副程式
+BmpReadXSizeTest副程式
+BmpReadYSizeTest副程式
+BmpReadTest副程式
+BmpWriteV2Test副程式
