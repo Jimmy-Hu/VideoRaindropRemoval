@@ -847,7 +847,7 @@ int main(int argc, char** argv)											//	主程式
 	BMPIMAGE BMPImage1;													//	宣告BMP影像1(BMPImage1)
 	BMPImage1 = BmpFileRead(FilenameString,false);						//	呼叫BmpFileRead副程式讀取BMP圖檔
 	free(FilenameString);												//	釋放FilenameString字元指標記憶體空間
-	printf("%s\n",BMPImage1.FILENAME);									//	顯示讀取圖檔之檔名
+	printf("Read image file: %s\n",BMPImage1.FILENAME);					//	顯示讀取圖檔之檔名
 	
 	if(BMPImage1.IMAGE_DATA == NULL)									//	若讀取BMP圖檔發生錯誤
 	{																	//	if statement start, 進入if敘述
