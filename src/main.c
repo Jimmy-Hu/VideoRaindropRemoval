@@ -12,7 +12,7 @@
 #include <unistd.h>														//	引入標頭檔unistd.h
 //-----全域定義區-----
 #define MAX_PATH 256													//	定義檔案路徑最長長度為256字元
-#define FILE_ROOT_PATH "C:\\Users\\Jimmy\\Documents\\GitHub\\VideoRaindropRemoval_Private\\Images"
+#define FILE_ROOT_PATH "C:\\Users\\Jimmy\\Documents\\GitHub\\VideoRaindropRemoval\\Images"
 //	定義檔案根目錄路徑位置(用於開啟圖檔)
 #define True true														//	定義True為true
 #define False false														//	定義False為false
