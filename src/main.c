@@ -970,7 +970,7 @@ unsigned long BmpReadYSize(const char *filename, const bool FilenameExtension)
 	fclose(fp);															//	關閉檔案
 	return BmpReadYSize;												//	將計算出BMP圖片檔案y(高度)大小(像素)數值傳回 
 }																		//	結束BMP圖檔ysize(高度)讀取副程式 
-//----BMP圖檔讀取副程式---- 
+//----BMP file read functions, BMP圖檔讀取副程式---- 
 char BmpRead(unsigned char *image,const int xsize,const int ysize, const char *filename, const bool FilenameExtension)
 {																		//	進入BMP圖檔讀取副程式
 	char fname_bmp[MAX_PATH];											//	宣告檔案名稱fname_bmp陣列變數(最多MAX_PATH個字元) 
