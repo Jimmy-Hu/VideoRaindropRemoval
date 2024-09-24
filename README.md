@@ -4,7 +4,7 @@ Remove raindrop in video.
 
 ## Experimental Results
 
-|             Input                 |                  Deep Detail Network                  |
+|             Input                 |                  [Deep Detail Network][1]                  |
 | :---------------------------------------------------: | :---------------------------------------------: |
 | ![InputVideo](https://github.com/Jimmy-Hu/VideoRaindropRemoval/blob/master/resources/Images/gif/Input/1/InputVideo.gif)   |  ![OutputVideo](https://github.com/Jimmy-Hu/VideoRaindropRemoval/blob/master/resources/Images/gif/DeepDetailNetwork/1/Video.gif)    |
 
@@ -17,3 +17,6 @@ In the rain, the video monitoring image blurred by the raindrop lines. The raind
 ## License
 
 This program is licensed under GNU General Public License v3.
+
+
+[1]: https://ieeexplore.ieee.org/document/8099669
