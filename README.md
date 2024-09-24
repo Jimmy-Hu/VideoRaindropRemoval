@@ -5,7 +5,7 @@ Remove raindrop in video.
 ## Experimental Results
 
 |             Input                 |                  [Deep Detail Network][1]                  |     [MFDNet][2]    |
-| :---------------------------------------------------: | :---------------------------------------------: |
+| :---------------------------------------------------: | :---------------------------------------------: | :---------------------------------------------: |
 | ![InputVideo](https://github.com/Jimmy-Hu/VideoRaindropRemoval/blob/master/resources/Images/gif/Input/1/InputVideo.gif)   |  ![OutputVideo](https://github.com/Jimmy-Hu/VideoRaindropRemoval/blob/master/resources/Images/gif/DeepDetailNetwork/1/Video.gif)    |    ![OutputVideo](https://github.com/Jimmy-Hu/VideoRaindropRemoval/blob/master/resources/Images/gif/MFDNet/1/Video.gif)      |
 
 ## Description
